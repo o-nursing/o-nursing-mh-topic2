@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>O.Nursing — بنك أسئلة الموضوع الثاني: المرض النفسي عبر التاريخ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --burg:#7C2D3E; --burg-d:#5C1F2D; --gold:#C9A227; --gold-l:#F5ECD7;
+  --cream:#FBF7F0; --warm:#F9EFEA; --ink:#2b2b2b; --mut:#8a7a72;
+  --green:#2e7d4f; --green-bg:#e6f4ec; --red:#b3261e; --red-bg:#fdecea;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'Tajawal',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh;}
+.wrap{max-width:760px; margin:0 auto; padding:0 18px 40px; width:100%;}
+/* header */
+header{padding:20px 0 8px; text-align:center;}
+.brand{font-family:'Great Vibes',cursive; font-size:34px; color:var(--burg); line-height:1;}
+.brand .dot{color:#FF8A5F;}
+.brand .star{color:var(--gold); font-size:20px; vertical-align:middle;}
+.sub{font-size:13px; color:var(--mut); margin-top:4px;}
+.rule{height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:12px auto 0; max-width:420px;}
+/* cards */
+.card{background:#fff; border:1px solid #ead9c9; border-radius:16px; padding:20px; margin-top:16px; box-shadow:0 2px 10px rgba(124,45,62,.06);}
+h1{font-size:21px; color:var(--burg); line-height:1.5;}
+h1 .en{font-size:15px; color:var(--mut); display:block; font-weight:500;}
+.meta{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.pill{background:var(--gold-l); color:var(--burg-d); border:1px solid var(--gold); border-radius:20px; padding:4px 12px; font-size:13px; font-weight:700;}
+.pill.soft{background:var(--warm); border-color:#e5c9c0;}
+/* level filter */
+.levels{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;}
+.lvl{border:1.5px solid var(--gold); background:#fff; color:var(--burg); border-radius:20px; padding:7px 16px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit;}
+.lvl.on{background:var(--burg); color:#fff; border-color:var(--burg);}
+.btn{display:block; width:100%; background:var(--burg); color:#fff; border:none; border-radius:12px; padding:14px; font-size:17px; font-weight:800; cursor:pointer; font-family:inherit; margin-top:16px;}
+.btn:hover{background:var(--burg-d);}
+.btn.ghost{background:#fff; color:var(--burg); border:1.5px solid var(--burg); margin-top:10px;}
+.btn:disabled{opacity:.5; cursor:default;}
+.small{font-size:13px; color:var(--mut); text-align:center; margin-top:10px; line-height:1.7;}
+/* quiz */
+.prog{height:8px; background:#eee; border-radius:8px; overflow:hidden; margin-top:16px;}
+.prog i{display:block; height:100%; background:linear-gradient(90deg,var(--gold),var(--burg)); width:0%; transition:width .3s;}
+.qtop{display:flex; justify-content:space-between; align-items:center; margin-top:14px; font-size:13px; color:var(--mut); font-weight:700;}
+.badge{font-size:12px; font-weight:800; border-radius:12px; padding:3px 10px;}
+.badge.easy{background:#e6f4ec; color:var(--green);}
+.badge.med{background:#fdf3d7; color:#8a6d00;}
+.badge.hard{background:#fdecea; color:var(--red);}
+.q{font-size:18px; font-weight:700; line-height:1.8; margin-top:12px; direction:ltr; text-align:left;}
+.q .ar-note{font-size:14px; color:var(--mut); font-weight:500; direction:rtl; text-align:right; display:block; margin-top:4px;}
+.opts{margin-top:14px; display:flex; flex-direction:column; gap:10px;}
+.opt{border:1.5px solid #e5d5c8; background:#fff; border-radius:12px; padding:12px 14px; font-size:16px; cursor:pointer; text-align:left; direction:ltr; font-family:inherit; line-height:1.5;}
+.opt:hover{border-color:var(--gold);}
+.opt.correct{border-color:var(--green); background:var(--green-bg);}
+.opt.wrong{border-color:var(--red); background:var(--red-bg);}
+.opt:disabled{cursor:default;}
+.tf{display:flex; gap:10px; margin-top:14px;}
+.tf .opt{flex:1; text-align:center; font-weight:800; font-size:17px;}
+.hintbtn{background:var(--gold-l); color:var(--burg-d); border:1px solid var(--gold); border-radius:10px; padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; margin-top:14px;}
+.hint{display:none; background:#fffbe6; border:1px dashed var(--gold); border-radius:10px; padding:10px 14px; margin-top:10px; font-size:14px; line-height:1.8;}
+.hint.show{display:block;}
+.explain{display:none; border-radius:10px; padding:12px 14px; margin-top:12px; font-size:14.5px; line-height:1.9;}
+.explain.show{display:block;}
+.explain.ok{background:var(--green-bg); border:1px solid var(--green);}
+.explain.no{background:var(--red-bg); border:1px solid var(--red);}
+.explain b{color:var(--burg);}
+.model{display:none; background:var(--warm); border:1px solid #e5c9c0; border-radius:10px; padding:12px 14px; margin-top:12px; font-size:14.5px; line-height:1.9; white-space:pre-line;}
+.model.show{display:block;}
+textarea{width:100%; min-height:90px; border:1.5px solid #e5d5c8; border-radius:12px; padding:12px; font-family:inherit; font-size:15px; margin-top:14px; direction:ltr;}
+/* results */
+.score-ring{width:150px; height:150px; margin:10px auto; position:relative;}
+.score-ring svg{transform:rotate(-90deg);}
+.score-ring .pct{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; color:var(--burg);}
+.res-line{text-align:center; font-size:16px; line-height:2;}
+.res-line b{color:var(--burg);}
+table.res{width:100%; border-collapse:collapse; margin-top:12px; font-size:14px;}
+table.res td, table.res th{border:1px solid #ead9c9; padding:8px; text-align:center;}
+table.res th{background:var(--burg); color:#fff;}
+.hidden{display:none !important;}
+footer{text-align:center; font-size:12px; color:var(--mut); margin-top:26px; line-height:1.8;}
+/* O.Nursing — QR-only: no copying, no printing */
+body{ -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+textarea{ -webkit-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text; }
+#print-note{ display:none; }
+@media print{ body *{ display:none !important; } #print-note{ display:block !important; text-align:center; font-size:16px; font-weight:700; color:#7c2d3e; margin-top:40%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="star">✦</span> O<span class="dot">.</span>Nursing <span class="star">✦</span></div>
+    <div class="sub">بنك أسئلة — الترم الثاني • تمريض الصحة النفسية</div>
+    <div class="rule"></div>
+  </header>
+
+  <!-- HOME -->
+  <div id="home" class="card">
+    <h1>الموضوع الثاني: المرض النفسي عبر التاريخ<span class="en">Topic 2 — Historical Perspectives of Mental Illness</span></h1>
+    <div class="meta">
+      <span class="pill">40 سؤال</span>
+      <span class="pill soft">اختيار من متعدد + صح وخطأ + مقالي</span>
+      <span class="pill soft">متدرجة: سهل ← متوسط ← صعب</span>
+    </div>
+    <p style="margin-top:12px; font-size:14.5px; line-height:1.9;">أسئلة إضافية شاملة كل أفكار الموضوع: العصور القديمة، أرسطو والأخلاط الأربعة، والمراحل الخمس لتطور تمريض الطب النفسي بالأسماء والتواريخ والعلاجات — مع <b>تلميح</b> لكل سؤال وشرح بعد الإجابة.</p>
+    <div class="levels" id="levels">
+      <button class="lvl on" data-lvl="all">الكل (40)</button>
+      <button class="lvl" data-lvl="easy">سهل (15)</button>
+      <button class="lvl" data-lvl="med">متوسط (15)</button>
+      <button class="lvl" data-lvl="hard">صعب (10)</button>
+    </div>
+    <button class="btn" id="btn-start">ابدأ الأسئلة ←</button>
+    <button class="btn ghost hidden" id="btn-resume">كمّل من حيث توقفت</button>
+    <div class="small" id="home-stats"></div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" class="card hidden">
+    <div class="prog"><i id="prog-fill"></i></div>
+    <div class="qtop"><span id="q-count"></span><span id="q-badge"></span><span id="q-score"></span></div>
+    <div class="q" id="q-stem"></div>
+    <div id="q-body"></div>
+    <button class="hintbtn" id="btn-hint">💡 تلميح</button>
+    <div class="hint" id="q-hint"></div>
+    <div class="explain" id="q-explain"></div>
+    <div class="model" id="q-model"></div>
+    <button class="btn hidden" id="btn-next">السؤال التالي ←</button>
+    <button class="btn hidden" id="btn-finish">عرض النتيجة</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="card hidden" style="text-align:center;">
+    <h1>النتيجة</h1>
+    <div class="score-ring">
+      <svg width="150" height="150" viewBox="0 0 150 150">
+        <circle cx="75" cy="75" r="65" fill="none" stroke="#eee" stroke-width="10"/>
+        <circle id="ring-fg" cx="75" cy="75" r="65" fill="none" stroke="#7C2D3E" stroke-width="10" stroke-linecap="round" stroke-dasharray="408" stroke-dashoffset="408"/>
+      </svg>
+      <div class="pct" id="res-pct">0%</div>
+    </div>
+    <div class="res-line" id="res-line"></div>
+    <table class="res" id="res-table"></table>
+    <button class="btn" id="btn-retry">إعادة الأسئلة</button>
+    <button class="btn ghost" id="btn-home">رجوع للموضوع الثاني</button>
+  </div>
+
+  <footer>O.Nursing • Dr: Abdullah Shawky<br>الأسئلة من محتوى المحاضرة<br><b style="color:#7c2d3e;">الأسئلة خاصة بـ O.Nursing — ممنوع النسخ والنقل</b></footer>
+  <div id="print-note">الأسئلة خاصة بـ O.Nursing — ممنوع النسخ والنقل</div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {"id": 1, "level": "easy", "type": "mcq", "q": "In ancient times, people believed that any sickness indicated:", "options": ["A bacterial infection.", "Displeasure of the Gods and a punishment for sins.", "Bad luck with no cause.", "A chemical imbalance in the brain."], "correct": 1, "hint": "Gods and sins — not germs.", "explain": "In ancient times, sickness was seen as <b>displeasure of the Gods</b> and, in fact, a <b>punishment for sins and wrongdoing</b>."},
+  {"id": 2, "level": "easy", "type": "mcq", "q": "A mentally ill person seen as divine was:", "options": ["Punished and locked away.", "Worshipped and adored.", "Burned at the stake.", "Sent to a hospital."], "correct": 1, "hint": "Divine = godlike — what do people do with a god?", "explain": "Those seen as <b>divine</b> were <b>worshipped and adored</b>. Those seen as demonic were ostracized, punished, and sometimes burned at the stake."},
+  {"id": 3, "level": "easy", "type": "mcq", "q": "A mentally ill person seen as demonic was:", "options": ["Worshipped and adored.", "Given a special honour.", "Ostracized, punished, and sometimes burned at the stake.", "Made a priest."], "correct": 2, "hint": "Demonic = from the devil.", "explain": "Those seen as <b>demonic</b> were <b>ostracized, punished, and sometimes burned at the stake</b>."},
+  {"id": 4, "level": "easy", "type": "mcq", "q": "Aristotle attempted to relate mental disorders to:", "options": ["The displeasure of the Gods.", "Physical disorders.", "The position of the stars.", "The person's diet only."], "correct": 1, "hint": "Aristotle moved the explanation from the gods to the body.", "explain": "<b>Aristotle</b> attempted to relate mental disorders to <b>physical disorders</b> — the first step from a supernatural to a bodily explanation."},
+  {"id": 5, "level": "easy", "type": "mcq", "q": "The four humors in Aristotle's theory are:", "options": ["Blood, water, yellow bile, and black bile.", "Blood, fire, air, and earth.", "Salt, sugar, bone, and muscle.", "Heart, liver, brain, and stomach."], "correct": 0, "hint": "Blood and water, plus two biles.", "explain": "The four humors are <b>blood, water, yellow bile, and black bile</b>. Their amounts in the body controlled the emotions."},
+  {"id": 6, "level": "easy", "type": "mcq", "q": "In Aristotle's theory, blood corresponds to:", "options": ["Sadness.", "Happiness.", "Anger.", "Calmness."], "correct": 1, "hint": "Blood = the bright, happy one.", "explain": "<b>Blood</b> corresponds to <b>happiness</b>; water to calmness, yellow bile to anger, and black bile to sadness."},
+  {"id": 7, "level": "easy", "type": "mcq", "q": "In Aristotle's theory, yellow bile corresponds to:", "options": ["Happiness.", "Calmness.", "Anger.", "Sadness."], "correct": 2, "hint": "Yellow bile = the hot, angry one.", "explain": "<b>Yellow bile</b> corresponds to <b>anger</b>."},
+  {"id": 8, "level": "easy", "type": "mcq", "q": "In Aristotle's theory, black bile corresponds to:", "options": ["Anger.", "Sadness.", "Happiness.", "Calmness."], "correct": 1, "hint": "Black = dark mood.", "explain": "<b>Black bile</b> corresponds to <b>sadness</b>."},
+  {"id": 9, "level": "easy", "type": "mcq", "q": "In Aristotle's theory, water corresponds to:", "options": ["Anger.", "Calmness.", "Sadness.", "Happiness."], "correct": 1, "hint": "Water = still and calm.", "explain": "<b>Water</b> corresponds to <b>calmness</b>."},
+  {"id": 10, "level": "easy", "type": "mcq", "q": "According to Aristotle, mental disorders were caused by:", "options": ["Evil spirits.", "An imbalance of the four humors.", "Bad food.", "Punishment by the Gods."], "correct": 1, "hint": "Too much or too little of a humor.", "explain": "<b>Imbalances of the four humors</b> were believed to cause mental disorders, so treatment aimed at restoring balance."},
+  {"id": 11, "level": "easy", "type": "mcq", "q": "Ancient treatment for mental disorders aimed at restoring balance through:", "options": ["Antibiotics and rest.", "Bloodletting and starving.", "Surgery on the brain.", "Herbal tea only."], "correct": 1, "hint": "Two harsh old methods — one takes blood out, one takes food away.", "explain": "Treatment was aimed at restoring balance through <b>bloodletting</b> (letting blood out) and <b>starving</b>."},
+  {"id": 12, "level": "easy", "type": "mcq", "q": "Phase 1 of the development of psychiatric–mental health nursing is called:", "options": ["The Work Role of the Psychiatric Nurse.", "The Emergence of Psychiatric–Mental Health Nursing.", "Graduate Education.", "Consultation and Research."], "correct": 1, "hint": "Phase 1 = the beginning, the emergence.", "explain": "Phase 1 (1773–1881) is <b>The Emergence of Psychiatric–Mental Health Nursing</b>."},
+  {"id": 13, "level": "easy", "type": "mcq", "q": "Phase 1 (Emergence) ran from:", "options": ["1882–1914.", "1773–1881.", "1915–1935.", "1946–1956."], "correct": 1, "hint": "The first phase starts in 1773.", "explain": "Phase 1 ran from <b>1773 to 1881</b>."},
+  {"id": 14, "level": "easy", "type": "mcq", "q": "Benjamin Rush is known for:", "options": ["Writing the first American textbook on psychiatry.", "Founding the first mental hospital.", "Inventing ECT.", "Writing the first nursing textbook."], "correct": 0, "hint": "Rush wrote the first American book on the subject.", "explain": "<b>Benjamin Rush</b> wrote the <b>first American textbook on psychiatry</b> (Phase 1)."},
+  {"id": 15, "level": "easy", "type": "tf", "q": "In ancient times, mentally ill people were sometimes burned at the stake.", "correct": true, "hint": "The demonic ones faced the stake.", "explain": "TRUE — those seen as demonic were ostracized, punished, and <b>sometimes burned at the stake</b>."},
+  {"id": 16, "level": "med", "type": "mcq", "q": "Philippe Pinel classified patients according to:", "options": ["Their age.", "Their observable behaviors.", "Their wealth.", "Their religion."], "correct": 1, "hint": "Pinel watched what patients DID.", "explain": "<b>Philippe Pinel</b> classified patients according to <b>their observable behaviors</b>."},
+  {"id": 17, "level": "med", "type": "mcq", "q": "Dorothea Lynde Dix devoted her time to:", "options": ["Writing textbooks.", "Improving conditions for the mentally ill.", "Inventing lobotomy.", "Founding a hospital in Baghdad."], "correct": 1, "hint": "Dix fought for better conditions.", "explain": "<b>Dorothea Lynde Dix</b> devoted time to <b>improving conditions for the mentally ill</b>."},
+  {"id": 18, "level": "med", "type": "mcq", "q": "Schools of nursing were established in Boston and Philadelphia by:", "options": ["1773.", "1872.", "1909.", "1955."], "correct": 1, "hint": "Late in Phase 1 — the 1870s.", "explain": "Schools of nursing were established in <b>Boston and Philadelphia by 1872</b>."},
+  {"id": 19, "level": "med", "type": "mcq", "q": "In Phase 1, attendants were hired to:", "options": ["Restrain patients.", "Socialize with patients.", "Give medicines.", "Clean the wards."], "correct": 1, "hint": "Attendants were companions, not guards.", "explain": "Attendants were hired to <b>socialize with patients</b> — spending time with them, not just watching them."},
+  {"id": 20, "level": "med", "type": "mcq", "q": "Phase 2 is called:", "options": ["Emergence.", "Development of the Work Role of the Psychiatric Nurse.", "Undergraduate Education.", "Graduate Education."], "correct": 1, "hint": "Phase 2 = the nurse's work role.", "explain": "Phase 2 (1882–1914) is the <b>Development of the Work Role of the Psychiatric Nurse</b>."},
+  {"id": 21, "level": "med", "type": "mcq", "q": "The first training schools for psychiatric nurses (1882) were established at:", "options": ["Boston and Philadelphia.", "McLean Hospital and Buffalo State Hospital.", "Baghdad and Cairo.", "London and Paris."], "correct": 1, "hint": "McLean (Massachusetts) and Buffalo (New York).", "explain": "Training schools were established at <b>McLean Hospital in Belmont, Massachusetts, and at Buffalo State Hospital in New York (1882)</b>."},
+  {"id": 22, "level": "med", "type": "mcq", "q": "Trained nurses were employed in state mental hospitals in:", "options": ["1882.", "1890.", "1909.", "1937."], "correct": 1, "hint": "Eight years after the first training schools.", "explain": "Trained nurses were employed in state mental hospitals in <b>1890</b>."},
+  {"id": 23, "level": "med", "type": "mcq", "q": "The National Society for Mental Hygiene was founded in:", "options": ["1882.", "1909.", "1937.", "1946."], "correct": 1, "hint": "Near the end of Phase 2.", "explain": "The <b>National Society for Mental Hygiene</b> was founded in <b>1909</b>."},
+  {"id": 24, "level": "med", "type": "mcq", "q": "In Phase 2, large state mental hospitals were built in:", "options": ["Big cities.", "Rural areas.", "Coastal towns.", "Mountain regions."], "correct": 1, "hint": "Away from the cities — in the countryside.", "explain": "Large state mental hospitals were built in <b>rural areas</b>."},
+  {"id": 25, "level": "med", "type": "mcq", "q": "Linda Richards was:", "options": ["The first graduate nurse in the United States.", "The first psychiatrist.", "The founder of McLean Hospital.", "The author of the Brown Report."], "correct": 0, "hint": "Richards — the first US graduate nurse.", "explain": "<b>Linda Richards, the first graduate nurse in the United States</b>, suggested that mentally ill patients receive the same quality of care as physically ill patients."},
+  {"id": 26, "level": "med", "type": "mcq", "q": "Linda Richards suggested that mentally ill patients receive:", "options": ["Less care than physically ill patients.", "The same quality of care as physically ill patients.", "No care at all.", "Care only at home."], "correct": 1, "hint": "Same quality — not less.", "explain": "Linda Richards suggested that mentally ill patients receive <b>the same quality of care as physically ill patients</b>."},
+  {"id": 27, "level": "med", "type": "mcq", "q": "Harriet Bailey wrote:", "options": ["The first American textbook on psychiatry.", "The first psychiatric nursing textbook, “Nursing Mental Diseases”.", "The Brown Report.", "The Mental Health Act."], "correct": 1, "hint": "Bailey = the first psychiatric NURSING textbook.", "explain": "<b>Harriet Bailey</b> wrote the first psychiatric nursing textbook, <b>“Nursing Mental Diseases”</b>. (Benjamin Rush wrote the first American textbook on psychiatry — different book.)"},
+  {"id": 28, "level": "med", "type": "mcq", "q": "Insulin shock therapy, electroconvulsive therapy, and prefrontal lobotomy were introduced in:", "options": ["Phase 1.", "Phase 2.", "Phase 3.", "Phase 5."], "correct": 2, "hint": "The three new treatments belong to the Undergraduate phase.", "explain": "Insulin shock therapy, <b>ECT</b>, and prefrontal <b>lobotomy</b> were introduced in <b>Phase 3 (1915–1935)</b>."},
+  {"id": 29, "level": "med", "type": "mcq", "q": "Phase 4 is called:", "options": ["Undergraduate Education.", "Development of Graduate Psychiatric Nursing Education.", "Consultation and Research.", "Emergence."], "correct": 1, "hint": "Phase 4 = graduate education.", "explain": "Phase 4 (1936–1945) is the <b>Development of Graduate Psychiatric Nursing Education</b>."},
+  {"id": 30, "level": "med", "type": "mcq", "q": "Clinical experiences in psychiatric hospitals were standardized by:", "options": ["1915.", "1937.", "1946.", "1955."], "correct": 1, "hint": "Early in Phase 4 — 1937.", "explain": "Clinical experiences in psychiatric hospitals were <b>standardized by 1937</b>."},
+  {"id": 31, "level": "hard", "type": "mcq", "q": "Participation in psychiatric courses became a requirement for nursing licensure in:", "options": ["1937.", "1943.", "1955.", "1909."], "correct": 2, "hint": "Not 1937 (that was standardization) — the licensure requirement came much later.", "explain": "Participation in psychiatric courses did not become a requirement for nursing licensure until <b>1955</b> — even though about half of nursing schools already offered the courses."},
+  {"id": 32, "level": "hard", "type": "mcq", "q": "By 1943, how many university-sponsored graduate programs existed?", "options": ["One.", "Two.", "Three.", "Ten."], "correct": 2, "hint": "By 1943 — three.", "explain": "By <b>1943</b>, <b>three</b> university-sponsored graduate programs existed."},
+  {"id": 33, "level": "hard", "type": "mcq", "q": "The Mental Health Act of 1946:", "options": ["Closed all mental hospitals.", "Provided funding of graduate nursing programs.", "Banned ECT.", "Founded the first mental hospital."], "correct": 1, "hint": "The Act paid for graduate programs.", "explain": "The <b>Mental Health Act of 1946</b> provided <b>funding of graduate nursing programs</b> to prepare psychiatric clinical nurses."},
+  {"id": 34, "level": "hard", "type": "mcq", "q": "The Brown Report stressed that:", "options": ["Rural hospitals should be closed.", "Interest in the field of psychiatry should be stimulated to facilitate research on prevention and cure.", "Lobotomy should be banned.", "Attendants should be trained."], "correct": 1, "hint": "Brown = research on prevention and cure.", "explain": "The <b>Brown Report</b>, a product of the committee's meeting, stressed that <b>interest in the field of psychiatry should be stimulated to facilitate research focusing on the prevention and cure of mental illness</b>."},
+  {"id": 35, "level": "hard", "type": "mcq", "q": "In 1956, the National League of Nursing Education formed a committee to:", "options": ["Review and revise a proposed guide for an advanced clinical course in psychiatric nursing.", "Write the first nursing textbook.", "Found the first mental hospital.", "Ban the use of restraint."], "correct": 0, "hint": "1956 = the NLNE committee and its guide.", "explain": "The NLNE formed a committee in <b>1956</b> to <b>review and revise a proposed guide for the development of an advanced clinical course in psychiatric nursing</b>."},
+  {"id": 36, "level": "hard", "type": "mcq", "q": "Which is the correct order of the five phases?", "options": ["Emergence → Work Role → Undergraduate → Graduate → Consultation & Research.", "Work Role → Emergence → Graduate → Undergraduate → Consultation.", "Emergence → Undergraduate → Work Role → Graduate → Consultation.", "Graduate → Emergence → Work Role → Undergraduate → Consultation."], "correct": 0, "hint": "Start with Emergence (1773) and end with Consultation & Research (1956).", "explain": "The correct order is: <b>1 Emergence (1773–1881) → 2 Work Role (1882–1914) → 3 Undergraduate (1915–1935) → 4 Graduate (1936–1945) → 5 Consultation & Research (1946–1956)</b>."},
+  {"id": 37, "level": "hard", "type": "mcq", "q": "Which of the following belongs to Phase 3 (Undergraduate Education)?", "options": ["The Mental Health Act.", "Insulin shock therapy, ECT, and prefrontal lobotomy.", "The McLean Hospital training school.", "The Brown Report."], "correct": 1, "hint": "The three treatments = Phase 3; the Act and the Brown Report = Phase 5; McLean = Phase 2.", "explain": "<b>Insulin shock therapy, ECT, and prefrontal lobotomy</b> were introduced in Phase 3. The McLean training school is Phase 2; the Mental Health Act and the Brown Report are Phase 5."},
+  {"id": 38, "level": "hard", "type": "mcq", "q": "Which of the following belongs to Phase 1 (Emergence)?", "options": ["The National Society for Mental Hygiene.", "Philippe Pinel classifying patients by observable behaviors.", "Linda Richards.", "The Mental Health Act."], "correct": 1, "hint": "Pinel = Phase 1; the Society = Phase 2; Richards = Phase 3; the Act = Phase 5.", "explain": "<b>Philippe Pinel</b> classifying patients belongs to Phase 1. The National Society for Mental Hygiene (1909) is Phase 2; Linda Richards is Phase 3; the Mental Health Act (1946) is Phase 5."},
+  {"id": 39, "level": "hard", "type": "mcq", "q": "The National Committee for Mental Hygiene was established in:", "options": ["Phase 1 (Emergence).", "Phase 2 (Work Role).", "Phase 3 (Undergraduate Education).", "Phase 5 (Consultation & Research)."], "correct": 2, "hint": "It closes the Phase 3 list — not the National Society (1909, Phase 2).", "explain": "The <b>National Committee for Mental Hygiene</b> was established in <b>Phase 3</b>. Do not confuse it with the National Society for Mental Hygiene, founded in 1909 (Phase 2)."},
+  {"id": 40, "level": "hard", "type": "written", "q": "List the five phases of the development of psychiatric–mental health nursing with their date ranges.", "model": "1) Phase 1: The Emergence of Psychiatric–Mental Health Nursing (1773–1881).\n2) Phase 2: Development of the Work Role of the Psychiatric Nurse (1882–1914).\n3) Phase 3: Development of Undergraduate Psychiatric Nursing Education (1915–1935).\n4) Phase 4: Development of Graduate Psychiatric Nursing Education (1936–1945).\n5) Phase 5: Development of Consultation and Research in Psychiatric Nursing Practice (1946–1956).", "hint": "Count the phases: Emergence, Work Role, Undergraduate, Graduate, Consultation & Research — each with its years.", "explain": "The five phases, in order, are: <b>Emergence (1773–1881), Work Role (1882–1914), Undergraduate Education (1915–1935), Graduate Education (1936–1945), and Consultation & Research (1946–1956)</b>."}
+];
+</script>
+
+<script>
+const LVL = {easy:"سهل", med:"متوسط", hard:"صعب"};
+const LVLCLS = {easy:"easy", med:"med", hard:"hard"};
+const KEY = "onursing_topic2_progress_v1";
+let selectedLvl = "all";
+let queue = [], idx = 0, score = 0, answered = 0, results = [];
+let levelStats = {easy:{t:0,c:0}, med:{t:0,c:0}, hard:{t:0,c:0}};
+let locked = false;
+
+function $(id){ return document.getElementById(id); }
+function loadProg(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+function saveProg(p){ try{ localStorage.setItem(KEY, JSON.stringify(p)); }catch(e){} }
+
+function refreshHome(){
+  const p = loadProg();
+  const done = p.done || {}, correct = p.correct || {};
+  const n = Object.keys(done).length;
+  const c = Object.keys(correct).length;
+  $("home-stats").textContent = n ? ("تقدّمك: أجبت على " + n + " سؤال من 40 — إجابات صحيحة: " + c + (p.best!=null ? (" • أفضل نتيجة: " + p.best + "%") : "")) : "ابدأ من السهل وتدرّج — كل سؤال معه تلميح وشرح.";
+  $("btn-resume").classList.toggle("hidden", !n || n>=40);
+}
+document.querySelectorAll("#levels .lvl").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.querySelectorAll("#levels .lvl").forEach(x=>x.classList.remove("on"));
+    b.classList.add("on"); selectedLvl = b.dataset.lvl;
+  });
+});
+$("btn-start").addEventListener("click", ()=>startQuiz(false));
+$("btn-resume").addEventListener("click", ()=>startQuiz(true));
+
+function buildQueue(resume){
+  let pool = QUESTIONS.filter(q => selectedLvl==="all" || q.level===selectedLvl);
+  if(resume){
+    const p = loadProg(); const done = p.done || {};
+    pool = pool.filter(q => !done[q.id]);
+    if(!pool.length){ pool = QUESTIONS.filter(q => selectedLvl==="all" || q.level===selectedLvl); }
+  }
+  return pool.slice();
+}
+function startQuiz(resume){
+  queue = buildQueue(resume); idx = 0; score = 0; answered = 0; results = [];
+  levelStats = {easy:{t:0,c:0}, med:{t:0,c:0}, hard:{t:0,c:0}};
+  queue.forEach(q=>{ if(q.type!=="written") levelStats[q.level].t++; });
+  $("home").classList.add("hidden"); $("results").classList.add("hidden"); $("quiz").classList.remove("hidden");
+  renderQ();
+}
+function cur(){ return queue[idx]; }
+function renderQ(){
+  const q = cur(); locked = false;
+  $("prog-fill").style.width = (idx/queue.length*100) + "%";
+  $("q-count").textContent = "سؤال " + (idx+1) + " من " + queue.length;
+  $("q-badge").innerHTML = '<span class="badge '+LVLCLS[q.level]+'">'+LVL[q.level]+'</span>';
+  $("q-score").textContent = "صح: " + score + " / " + answered;
+  $("q-stem").innerHTML = q.q + (q.ar ? '<span class="ar-note">'+q.ar+'</span>' : "");
+  $("q-hint").classList.remove("show"); $("q-hint").textContent = q.hint || "";
+  $("btn-hint").style.display = q.hint ? "" : "none";
+  const ex = $("q-explain"); ex.classList.remove("show","ok","no"); ex.innerHTML = "";
+  const mo = $("q-model"); mo.classList.remove("show"); mo.textContent = "";
+  $("btn-next").classList.add("hidden"); $("btn-finish").classList.add("hidden");
+  const body = $("q-body"); body.innerHTML = "";
+  if(q.type === "mcq"){
+    const box = document.createElement("div"); box.className = "opts";
+    q.options.forEach((op,i)=>{
+      const b = document.createElement("button"); b.className = "opt"; b.textContent = op;
+      b.addEventListener("click", ()=>answerMcq(i, b)); box.appendChild(b);
+    });
+    body.appendChild(box);
+  } else if(q.type === "tf"){
+    const box = document.createElement("div"); box.className = "tf";
+    [["True", true], ["False", false]].forEach(([label, val])=>{
+      const b = document.createElement("button"); b.className = "opt"; b.textContent = label;
+      b.addEventListener("click", ()=>answerTf(val, b)); box.appendChild(b);
+    });
+    body.appendChild(box);
+  } else if(q.type === "written"){
+    const ta = document.createElement("textarea"); ta.placeholder = "اكتب إجابتك هنا…";
+    body.appendChild(ta);
+    const b = document.createElement("button"); b.className = "btn"; b.textContent = "أظهر الإجابة النموذجية";
+    b.addEventListener("click", ()=>{
+      if(locked) return; locked = true;
+      mo.textContent = q.model; mo.classList.add("show");
+      ex.innerHTML = "<b>الشرح:</b> " + q.explain; ex.classList.add("show","ok");
+      b.disabled = true; showNav();
+    });
+    body.appendChild(b);
+  }
+}
+$("btn-hint").addEventListener("click", ()=>{ $("q-hint").classList.toggle("show"); });
+function markProgress(id, ok){
+  const p = loadProg(); p.done = p.done || {}; p.correct = p.correct || {};
+  p.done[id] = true; if(ok) p.correct[id] = true; saveProg(p);
+}
+function finishAnswer(ok){
+  answered++; if(ok) score++;
+  markProgress(cur().id, ok);
+  results.push({id:cur().id, ok:ok});
+  $("q-score").textContent = "صح: " + score + " / " + answered;
+  showNav();
+}
+function showNav(){
+  if(idx < queue.length-1){ $("btn-next").classList.remove("hidden"); }
+  else { $("btn-finish").classList.remove("hidden"); }
+}
+function answerMcq(i, btn){
+  if(locked) return; locked = true;
+  const q = cur(); const ok = (i === q.correct);
+  document.querySelectorAll("#q-body .opt").forEach((el, j)=>{
+    el.disabled = true;
+    if(j === q.correct) el.classList.add("correct");
+    if(j === i && !ok) el.classList.add("wrong");
+  });
+  const ex = $("q-explain");
+  ex.innerHTML = (ok ? "<b>✓ إجابة صحيحة.</b> " : "<b>✗ إجابة خاطئة.</b> الصح: <b>" + q.options[q.correct] + "</b><br>") + q.explain;
+  ex.classList.add("show", ok ? "ok" : "no");
+  finishAnswer(ok);
+}
+function answerTf(val, btn){
+  if(locked) return; locked = true;
+  const q = cur(); const ok = (val === q.correct);
+  document.querySelectorAll("#q-body .opt").forEach(el=>{
+    el.disabled = true;
+    const v = el.textContent === "True";
+    if(v === q.correct) el.classList.add("correct");
+    if(el === btn && !ok) el.classList.add("wrong");
+  });
+  const ex = $("q-explain");
+  ex.innerHTML = (ok ? "<b>✓ إجابة صحيحة.</b> " : "<b>✗ إجابة خاطئة.</b> الصح: <b>" + (q.correct ? "True" : "False") + "</b><br>") + q.explain;
+  ex.classList.add("show", ok ? "ok" : "no");
+  finishAnswer(ok);
+}
+$("btn-next").addEventListener("click", ()=>{ idx++; renderQ(); });
+$("btn-finish").addEventListener("click", showResults);
+function showResults(){
+  $("quiz").classList.add("hidden"); $("results").classList.remove("hidden");
+  const total = results.length || 1;
+  const pct = Math.round(score/total*100);
+  $("res-pct").textContent = pct + "%";
+  const ring = $("ring-fg");
+  ring.style.strokeDashoffset = 408 - (408*pct/100);
+  const p = loadProg(); if(p.best==null || pct > p.best){ p.best = pct; saveProg(p); }
+  let msg = pct>=90 ? "ممتاز! الموضوع ده بقى في جيبك." : pct>=70 ? "كويس جداً — راجع الغلطات وهتبقى ممتاز." : pct>=50 ? "بداية كويسة — راجع الشرح والغلطات وحاول تاني." : "محتاج مراجعة — ارجع للشرح في الملف وحاول تاني.";
+  $("res-line").innerHTML = "أجبت صح على <b>" + score + "</b> من <b>" + total + "</b> سؤال<br>" + msg;
+  let rows = "<tr><th>المستوى</th><th>صح</th><th>من</th></tr>";
+  const agg = {easy:{t:0,c:0}, med:{t:0,c:0}, hard:{t:0,c:0}};
+  results.forEach(r=>{ const q = QUESTIONS.find(x=>x.id===r.id); if(!q) return; agg[q.level].t++; if(r.ok) agg[q.level].c++; });
+  ["easy","med","hard"].forEach(l=>{ if(agg[l].t) rows += "<tr><td>"+LVL[l]+"</td><td>"+agg[l].c+"</td><td>"+agg[l].t+"</td></tr>"; });
+  $("res-table").innerHTML = rows;
+}
+$("btn-retry").addEventListener("click", ()=>startQuiz(false));
+$("btn-home").addEventListener("click", ()=>{
+  $("results").classList.add("hidden"); $("home").classList.remove("hidden"); refreshHome();
+
+/* O.Nursing — QR-only protection: block copying, right-click, printing */
+document.addEventListener("contextmenu", function(e){ e.preventDefault(); });
+document.addEventListener("copy", function(e){ e.preventDefault(); });
+document.addEventListener("cut", function(e){ e.preventDefault(); });
+document.addEventListener("dragstart", function(e){ e.preventDefault(); });
+document.addEventListener("keydown", function(e){
+  if((e.ctrlKey || e.metaKey) && ["c","x","u","s","p","a"].indexOf(e.key.toLowerCase()) !== -1){ e.preventDefault(); }
+});
+});
+refreshHome();
+</script>
+</body>
+</html>
